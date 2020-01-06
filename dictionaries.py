@@ -1,23 +1,21 @@
 import sys
 
-num = int(input())
+n = int(sys.stdin.readline().strip())
 
-phone_book = {}
+phone_book = dict()
 
-for i in range(0, num):
-    entry = str(input()).split(" ")
+for i in range(n):
 
-    name = entry[0]
-    phone = int(entry[1])
-    phone_book[name] = phone
+    entry = sys.stdin.readline().strip().split(' ')
 
-for j in range(0, num):
-    name = str(input())
+    phone_book[entry[0]] = entry[1]
 
-    if name in phone_book:
-        phone = phone_book[name]
-        print(name + "=" + str(phone))
+query = sys.stdin.readline().strip()
+
+while query:
+    phone_number = phone_book.get(query)
+    if phone_number:
+        print(query + '=' + phone_number)
     else:
-        print("Not found")
-
-
+        print('Not found')
+    query = sys.stdin.readline().strip()
