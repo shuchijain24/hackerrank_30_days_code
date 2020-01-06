@@ -1,4 +1,5 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+
 num = int(input())
 
 phone_book = {}
@@ -18,6 +19,5 @@ for j in range(0, num):
         print(name + "=" + str(phone))
     else:
         print("Not found")
-
 
 
